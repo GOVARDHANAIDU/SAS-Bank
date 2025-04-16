@@ -1,0 +1,131 @@
+@charset "UTF-8";
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+body {
+    background: #f4f4f4;
+}
+.navbar {
+    background: #8e44ad;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+.navbar h3 {
+    color: white;
+}
+.nav-links {
+    display: flex;
+    align-items: center;
+}
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+}
+.auth-links {
+    margin-left: auto;
+}
+.auth-links a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+    font-weight: bold;
+}
+.container {
+    max-width: 400px;
+    margin: 50px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+input, button {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+.proceed {
+    background: #8e44ad;
+    color: white;
+    border: none;
+}
+button:hover {
+    background: #732d91;
+}
+.error {
+    color: red;
+    font-size: 14px;
+    display: none;
+}
+.dropdown {
+    position: relative;
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background: white;
+    box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
+    border-radius: 5px;
+    top: 30px;
+    left: 0;
+    width: 180px;
+    z-index: 1;
+}
+.dropdown-content a {
+    display: block;
+    padding: 10px;
+    color: #333;
+    text-decoration: none;
+    transition: 0.3s;
+}
+.dropdown-content a:checked {
+    background: #8e44ad;
+    color: white;
+}
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+.verify {
+    width: 75%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+        .service-box:hover {
+            transform: scale(1.5);
+            box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.15);
+        }
+        .service-box a { text-decoration: none; color: #8e44ad; font-weight: lighter; }
+        .extra-services {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+        }
+        .navbar{
+        width: 100%;
+        height: 50px;
+        }
+        .hero{
+        text-shadow: lime;
+        }
+.verified {
+    color: green;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+}
+
+
+
+        
