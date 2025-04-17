@@ -97,7 +97,7 @@
         <div class="services-container">
             <div class="service-box"><a href="upiPayment.jsp">UPI Payment</a></div>
             <div class="service-box"><a href="MoneyTransfer.jsp">Money Transfer</a></div>
-            <div class="service-box"><a href="#">Cards</a></div>
+            <div class="service-box"><a href="Cards.jsp">Cards</a></div>
             <div class="service-box"><a href="#">Recharge</a></div>
             <div class="service-box"><a href="DisplayBalance.jsp">Check Balance</a></div>
             <div class="service-box"><a href="TransactionHistory.jsp">Transaction History</a></div>
