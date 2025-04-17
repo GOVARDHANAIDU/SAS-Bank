@@ -1,3 +1,4 @@
+<%@page import="com.controller.TestEmailOtp"%>
 <%@page import="java.util.Set"%>
 <%@page import="com.mysql.cj.Session"%>
 <%@page import="com.SAS.DAO.ForgotPasswordImp"%>
@@ -71,6 +72,12 @@
         .error{
         color:red;
         }
+        .note-point {
+	    margin-top:2%;
+	    font-size: 11.5px;
+	    color:red;
+	    align-content:stretch;
+	    }
     </style>
 </head>
 <body>
@@ -78,37 +85,14 @@
         <h3>Forgot Password - SAS BANK</h3>
         
         <!-- Form for Email Input -->
-        <form  method="post">
+        <form  action="forgotPasswordOTP">
             <div class="input-group">
                 <label>Email ID</label>
                 <input type="email" name="emailid" required>
             </div>
             <input type="submit" class="btn" Value="Submit" >
         </form>
-
-        <!-- Displaying Entered Email -->
-        <div class="output">
-            <%
-                ForgotPasswordImp forgotPasswordImp = new ForgotPasswordImp();
-                String email = request.getParameter("emailid");
-        		HttpSession httpSession = request.getSession();
-        	    httpSession.setAttribute("email", email);
-                if (email != null) {
-                	if(forgotPasswordImp.checkingEmailID(email) == true) {
-            %>
-                 <p> Verified Successful</p>
-                <p>Email Entered: <%= email %></p>
-                <% 
-                    RequestDispatcher requestDispatcher = request.getRequestDispatcher("NewPassword.jsp");
-                    requestDispatcher.forward(request, response);
-                } else {
-            	%> 
-            	 <p class=error> ❌ Invalid EmailID </p>
-            	 <a href="CreateAccount.jsp" id="login">Create Account</a> 
-             <% }
-               }
-            %>
-        </div>
+         <p class="note-point">Note: OTP will be sent exclusively to your registered email. Please enter it correctly. </p>
     </div>
 </body>
 </html>

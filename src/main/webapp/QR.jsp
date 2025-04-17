@@ -57,7 +57,7 @@
       border: none;
       border-radius: 6px;
       cursor: pointer;
-      transition: background-color 1s ease;
+      transition: background-color 0.5s ease;
       width: 150px;
     }
 
@@ -88,7 +88,7 @@
 
 <body>
   <div class="navbar">
-        <h1>SAS Bank</h1>
+        <h3>SAS Bank</h3>
         <div class="nav-links">
             <a href="Home.jsp">Home</a>
             <div class="dropdown">

@@ -34,6 +34,7 @@
 		    background-size: 100%;
 		    background-repeat:no-repeat;
 		    background-position: center;
+		    border-radius:30px;
 		    opacity: 0;
 		    transition: opacity 1s ease-in-out;
 		}
@@ -78,7 +79,7 @@
             width: 0;
             display: inline-block;
             text-align: center;
-            animation: typing 3s steps(30, end) forwards;
+            animation: typing 7s steps(30, end) forwards;
         }
 
         .hero {
