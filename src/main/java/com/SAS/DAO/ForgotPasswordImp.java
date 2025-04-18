@@ -9,12 +9,14 @@ import java.sql.SQLException;
 public class ForgotPasswordImp implements ForgotPasswordDAO {
 	private static final String select = "Select * from user_details where Email_ID = ?";
 	private static final String update = "update user_details set Password= ? where Email_ID = ?";
-	
+	String url = "jdbc:mysql://sql12.freesqldatabase.com:3306/sql12773883"; // Host & DB name
+        String username = "sql12773883";   // Hosting DB username
+        String password = "r71iFqJHWT";   // Hosting DB password
 	@Override
 	public boolean checkingEmailID(String emailid) {
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/sas_bank","root","W7301@jqir#");
+			Connection connection = DriverManager.getConnection(url,username,password);
 			PreparedStatement preparedStatement = connection.prepareStatement(select);
 			preparedStatement.setString(1, emailid);
 			ResultSet resultSet = preparedStatement.executeQuery();
@@ -43,7 +45,7 @@ public class ForgotPasswordImp implements ForgotPasswordDAO {
 		try {
 			
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/sas_bank","root","W7301@jqir#");
+			Connection connection = DriverManager.getConnection(url,username,password);
 			PreparedStatement preparedStatement = connection.prepareStatement(update);
 			preparedStatement.setString(1, confirmPassword);
 			preparedStatement.setString(2, emailid);
