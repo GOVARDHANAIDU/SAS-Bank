@@ -17,7 +17,7 @@ import com.controller.LoginPage;
 public class LoginImp implements Login {
     private static final String select_all ="select * from user_details where Email_ID = ? and Password = ? ";
     LoginPage loginPage = new LoginPage();
-	String url = "jdbc:mysql://sql12.freesqldatabase.com:3306/sql12773883"; // Host & DB name
+	String url = ""; // Host & DB name
         String username = "sql12773883";   // Hosting DB username
         String password = "r71iFqJHWT";   // Hosting DB password
 	@Override
@@ -25,7 +25,7 @@ public class LoginImp implements Login {
 		
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			Connection connection = DriverManager.getConnection(url,username,password);
+			Connection connection = DriverManager.getConnection("jdbc:mysql://sql12.freesqldatabase.com:3306/sql12773883","sql12773883","r71iFqJHWT");
 			PreparedStatement preparedStatement = connection.prepareStatement(select_all);
 			preparedStatement.setString(1,emailid);
 			preparedStatement.setString(2, password);
@@ -42,6 +42,7 @@ public class LoginImp implements Login {
 	     	    	int id = resultSet.getInt("id");
 	     	    	double amount = Double.parseDouble(temp_amount);
 	     			loginPage.userName(name,upiid,amount,id);
+	     			System.out.println(name);
 			        return true;
 			     }
 			     else {			    	 

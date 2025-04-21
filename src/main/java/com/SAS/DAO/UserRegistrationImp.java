@@ -42,7 +42,7 @@ public class UserRegistrationImp implements UserRegistrationDAO {
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			
-				Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/sas_bank","root","W7301@jqir#");
+				Connection connection = DriverManager.getConnection("jdbc:mysql://sql12.freesqldatabase.com:3306/sql12773883","sql12773883","r71iFqJHWT");
 				PreparedStatement preparedStatement = connection.prepareStatement(insertDetails);
 				preparedStatement.setString(1, bankUserDetails.getUserName());
 				preparedStatement.setString(2, bankUserDetails.getEmailid());
@@ -84,7 +84,7 @@ public class UserRegistrationImp implements UserRegistrationDAO {
 	public boolean debitAmountFromAccount(String upi,double amount, String selectAmountMode) {		
 			try {
 				Class.forName("com.mysql.cj.jdbc.Driver");
-				Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/sas_bank","root","W7301@jqir#");
+				Connection connection = DriverManager.getConnection("jdbc:mysql://sql12.freesqldatabase.com:3306/sql12773883","sql12773883","r71iFqJHWT");
 				PreparedStatement preparedStatement = connection.prepareStatement(updateAmount);
 				preparedStatement.setDouble(1, getSenderAccountBalance(upi)-amount);
 				preparedStatement.setString(2, upi);
@@ -119,7 +119,7 @@ public class UserRegistrationImp implements UserRegistrationDAO {
 	public boolean creditAmount(String upi, double amount, String selectAmountMode) {
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/sas_bank","root","W7301@jqir#");
+			Connection connection = DriverManager.getConnection("jdbc:mysql://sql12.freesqldatabase.com:3306/sql12773883","sql12773883","r71iFqJHWT");
 			PreparedStatement preparedStatement = connection.prepareStatement(creditAmount);
 			preparedStatement.setDouble(1, getAccountBalance(upi)+amount);
 			preparedStatement.setString(2, upi);
@@ -152,7 +152,7 @@ public class UserRegistrationImp implements UserRegistrationDAO {
 	public double getAccountBalance(String recieverUpiid) {
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/sas_bank","root","W7301@jqir#");
+			Connection connection = DriverManager.getConnection("jdbc:mysql://sql12.freesqldatabase.com:3306/sql12773883","sql12773883","r71iFqJHWT");
 			PreparedStatement preparedStatement = connection.prepareStatement(getAccountBalance);
 			preparedStatement.setString(1, recieverUpiid);
 			ResultSet result = preparedStatement.executeQuery();
@@ -178,7 +178,7 @@ public class UserRegistrationImp implements UserRegistrationDAO {
 	public double getSenderAccountBalance(String senderUpiid) {
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/sas_bank","root","W7301@jqir#");
+			Connection connection = DriverManager.getConnection("jdbc:mysql://sql12.freesqldatabase.com:3306/sql12773883","sql12773883","r71iFqJHWT");
 			PreparedStatement preparedStatement = connection.prepareStatement(getAccountBalance);
 			preparedStatement.setString(1, senderUpiid);
 			ResultSet result = preparedStatement.executeQuery();
@@ -202,7 +202,7 @@ public class UserRegistrationImp implements UserRegistrationDAO {
 	public int getUserId(String Senderupi) {
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/sas_bank","root","W7301@jqir#");
+			Connection connection = DriverManager.getConnection("jdbc:mysql://sql12.freesqldatabase.com:3306/sql12773883","sql12773883","r71iFqJHWT");
 			PreparedStatement preparedStatement = connection.prepareStatement(getUserId);
 			preparedStatement.setString(1, Senderupi);
 			ResultSet result = preparedStatement.executeQuery();
@@ -228,7 +228,7 @@ public class UserRegistrationImp implements UserRegistrationDAO {
 	public String getUserName(String Senderupi) {
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/sas_bank","root","W7301@jqir#");
+			Connection connection = DriverManager.getConnection("jdbc:mysql://sql12.freesqldatabase.com:3306/sql12773883","sql12773883","r71iFqJHWT");
 			PreparedStatement preparedStatement = connection.prepareStatement(getUserName);
 			preparedStatement.setString(1, Senderupi);
 			ResultSet result = preparedStatement.executeQuery();
@@ -302,7 +302,7 @@ public class UserRegistrationImp implements UserRegistrationDAO {
 	public String getReceiverUserName(String receiverUpi) {
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/sas_bank","root","W7301@jqir#");
+			Connection connection = DriverManager.getConnection("jdbc:mysql://sql12.freesqldatabase.com:3306/sql12773883","sql12773883","r71iFqJHWT");
 			PreparedStatement preparedStatement = connection.prepareStatement(getUserName);
 			preparedStatement.setString(1, receiverUpi);
 			ResultSet result = preparedStatement.executeQuery();
@@ -327,7 +327,7 @@ public class UserRegistrationImp implements UserRegistrationDAO {
 	public String getReceiverUpiUsingPhoneNumber(long number) {
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/sas_bank","root","W7301@jqir#");
+			Connection connection = DriverManager.getConnection("jdbc:mysql://sql12.freesqldatabase.com:3306/sql12773883","sql12773883","r71iFqJHWT");
 			PreparedStatement preparedStatement = connection.prepareStatement(getReciverUpiUsingnumber);
 			preparedStatement.setLong(1, number);
 			ResultSet result = preparedStatement.executeQuery();
@@ -353,7 +353,7 @@ public class UserRegistrationImp implements UserRegistrationDAO {
 		
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/sas_bank","root","W7301@jqir#");
+			Connection connection = DriverManager.getConnection("jdbc:mysql://sql12.freesqldatabase.com:3306/sql12773883","sql12773883","r71iFqJHWT");
 			PreparedStatement preparedStatement = connection.prepareStatement(getReciverUpiUsingAccountNumber);
 			preparedStatement.setLong(1, Accnumber);
 			ResultSet result = preparedStatement.executeQuery();

@@ -16,7 +16,7 @@ public class ForgotPasswordImp implements ForgotPasswordDAO {
 	public boolean checkingEmailID(String emailid) {
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			Connection connection = DriverManager.getConnection(url,username,password);
+			Connection connection = DriverManager.getConnection("jdbc:mysql://sql12.freesqldatabase.com:3306/sql12773883","sql12773883","r71iFqJHWT");
 			PreparedStatement preparedStatement = connection.prepareStatement(select);
 			preparedStatement.setString(1, emailid);
 			ResultSet resultSet = preparedStatement.executeQuery();
@@ -45,7 +45,7 @@ public class ForgotPasswordImp implements ForgotPasswordDAO {
 		try {
 			
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			Connection connection = DriverManager.getConnection(url,username,password);
+			Connection connection = DriverManager.getConnection("jdbc:mysql://sql12.freesqldatabase.com:3306/sql12773883","sql12773883","r71iFqJHWT");
 			PreparedStatement preparedStatement = connection.prepareStatement(update);
 			preparedStatement.setString(1, confirmPassword);
 			preparedStatement.setString(2, emailid);

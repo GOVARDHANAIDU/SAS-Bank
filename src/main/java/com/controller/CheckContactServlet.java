@@ -25,7 +25,7 @@ public class CheckContactServlet extends HttpServlet{
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			Connection connection = 
-					DriverManager.getConnection("jdbc:mysql://localhost:3306/sas_bank","root","W7301@jqir#");
+					DriverManager.getConnection("jdbc:mysql://sql12.freesqldatabase.com:3306/sql12773883","sql12773883","r71iFqJHWT");
 			PreparedStatement preparedStatement = connection.prepareStatement("Select User_Name from user_details where Phone_Number = ?");
 			preparedStatement.setLong(1, phone);
 			System.out.println(preparedStatement);

@@ -13,7 +13,7 @@ public class GetBalanceServlet extends HttpServlet {
 
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/sas_bank", "root", "W7301@jqir#");
+            Connection conn = DriverManager.getConnection("jdbc:mysql://sql12.freesqldatabase.com:3306/sql12773883","sql12773883","r71iFqJHWT");
             PreparedStatement stmt = conn.prepareStatement("SELECT Account_Balance FROM user_details WHERE Email_ID=?");
                       
             stmt.setString(1, email); 
