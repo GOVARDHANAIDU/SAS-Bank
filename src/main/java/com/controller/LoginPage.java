@@ -1,6 +1,5 @@
 package com.controller;
 
-import java.awt.print.Printable;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.security.AllPermission;
@@ -17,8 +16,6 @@ import javax.servlet.http.HttpSession;
 import com.SAS.DAO.AllBankUserDetailsDAO;
 import com.SAS.DAO.AllBankUserDetailsImp;
 import com.SAS.DAO.LoginImp;
-import com.SAS.DTO.BankUserDetails;
-import com.google.protobuf.TextFormat.Printer;
 
 @WebServlet("/loginpage")
 public class LoginPage extends HttpServlet {
@@ -26,11 +23,13 @@ public class LoginPage extends HttpServlet {
 	private static String upi = "";
 	private static double accamount;
 	private static int userId;
-	AllBankUserDetailsDAO allBankUserDetailsDAO = new AllBankUserDetailsImp(); 
+	
 		
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		
 		LoginImp login = new LoginImp();
+		AllBankUserDetailsDAO allBankUserDetailsDAO = new AllBankUserDetailsImp(); 
 	     String emailid = req.getParameter("emailid");
 	     String password = req.getParameter("password");
 	     

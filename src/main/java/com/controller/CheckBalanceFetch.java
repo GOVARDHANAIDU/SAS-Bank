@@ -2,7 +2,6 @@ package com.controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.net.http.HttpClient;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;

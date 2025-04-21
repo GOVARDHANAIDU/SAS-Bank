@@ -14,6 +14,7 @@ import java.util.Base64;
 @WebServlet("/GetImageServlet")
 public class GetImageServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	
 		MongoClient mongoClient = MongoClients.create("mongodb://localhost:27017");
 	    MongoDatabase database = mongoClient.getDatabase("Codetantra");
 	    MongoCollection<Document> collection = database.getCollection("sample_data");

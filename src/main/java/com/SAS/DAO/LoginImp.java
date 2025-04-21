@@ -12,8 +12,6 @@ import java.util.List;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.http.HttpSession;
 
-import com.SAS.DTO.AccountStatement;
-import com.SAS.DTO.BankUserDetails;
 import com.controller.LoginPage;
 
 public class LoginImp implements Login {
