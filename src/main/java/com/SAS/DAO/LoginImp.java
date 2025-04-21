@@ -17,12 +17,15 @@ import com.controller.LoginPage;
 public class LoginImp implements Login {
     private static final String select_all ="select * from user_details where Email_ID = ? and Password = ? ";
     LoginPage loginPage = new LoginPage();
+	String url = "jdbc:mysql://sql12.freesqldatabase.com:3306/sql12773883"; // Host & DB name
+        String username = "sql12773883";   // Hosting DB username
+        String password = "r71iFqJHWT";   // Hosting DB password
 	@Override
 	public boolean selectLoginDetails(String emailid, String password) {
 		
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/sas_bank","root","W7301@jqir#");
+			Connection connection = DriverManager.getConnection(url,username,password);
 			PreparedStatement preparedStatement = connection.prepareStatement(select_all);
 			preparedStatement.setString(1,emailid);
 			preparedStatement.setString(2, password);

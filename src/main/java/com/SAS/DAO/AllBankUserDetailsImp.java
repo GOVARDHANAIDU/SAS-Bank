@@ -12,6 +12,9 @@ import com.SAS.DTO.BankUserDetails;
 
 public class AllBankUserDetailsImp implements AllBankUserDetailsDAO{
 //	BankUserDetails bankUserDetails = new BankUserDetails();
+	 String url = "jdbc:mysql://sql12.freesqldatabase.com:3306/sql12773883"; // Host & DB name
+        String username = "sql12773883";   // Hosting DB username
+        String password = "r71iFqJHWT";   // Hosting DB password
 	List<BankUserDetails> list = new ArrayList<BankUserDetails>();
     private static final String selectAll = "select * from user_details";
 	@Override
@@ -19,7 +22,7 @@ public class AllBankUserDetailsImp implements AllBankUserDetailsDAO{
 		try {
 			
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/sas_bank","root","W7301@jqir#");
+			Connection connection = DriverManager.getConnection(url,username,password);
 			PreparedStatement preparedStatement = connection.prepareStatement(selectAll);
 			ResultSet resultSet = preparedStatement.executeQuery();
 			if(resultSet.isBeforeFirst()) {	
