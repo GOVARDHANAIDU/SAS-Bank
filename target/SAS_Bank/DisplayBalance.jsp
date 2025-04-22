@@ -103,6 +103,27 @@
         .dropdown:hover .dropdown-content {
             display: block;
         }
+        .spinner {
+	      border: 5px solid #f3f3f3;
+	      border-top: 5px solid teal;
+	      border-radius: 50%;
+	      width: 60px;
+	      height: 60px;
+	      animation: spin 1s linear infinite;
+	      margin-top:-19%;
+	      margin-left:48%;
+	      float: left;
+	    }
+	
+	    @keyframes spin {
+	      0% { transform: rotate(0deg); }
+	      100% { transform: rotate(360deg); }
+	    }
+	
+	    #loading {
+	      display: none;
+	      text-align: center;
+	    }
     </style>
 </head>
 <body>
@@ -142,6 +163,9 @@
             <button class="tick-btn" onclick="submitPin()">&#8626;</button>
         </div>
     </div>
+    <div id="loading">
+    <div class="spinner"></div>
+    </div>
     <script>
     let pin = "";
     function enterPin(num) {
@@ -163,6 +187,9 @@
     }
     function submitPin() {
         if (pin.length === 4) {
+            // Show the spinner
+            document.getElementById("loading").style.display = "block";
+
             fetch('CheckBalance', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
@@ -170,6 +197,9 @@
             })
             .then(response => response.text())
             .then(data => {
+                // Hide the spinner once we get a response
+                document.getElementById("loading").style.display = "none";
+
                 console.log(data.trim());
                 if (data.trim() === 'valid') {
                     window.location.href = "AccountBalance.jsp";
@@ -179,11 +209,16 @@
                     updateDisplay();
                 }
             })
-            .catch(error => console.error('Error:', error));
+            .catch(error => {
+                console.error('Error:', error);
+                document.getElementById("loading").style.display = "none";
+                alert("Something went wrong. Please try again.");
+            });
         } else {
             alert("Please enter a 4-digit PIN");
         }
     }
+    
 </script>
     
 </body>

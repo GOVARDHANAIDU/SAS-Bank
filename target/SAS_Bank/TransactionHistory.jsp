@@ -15,10 +15,11 @@
 </head>
 <style>
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" 
-	 integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">"
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" 
-    integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
-    
+integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" 
+integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
+
      .wrapper {
 	    min-height: 85%;
 	    display: flex;
@@ -143,8 +144,9 @@
     </div>
      <div class="wrapper">
     <center>
-    <table  class="table-info" id="tablewidth">
-            <tr >
+	<div style="max-height: 600px; overflow-y: auto; width: 80%; margin-bottom: 20px; ">
+	<table class="table-info table table-bordered" id="tablewidth">	
+	            <tr >
                 
                 <th >Name</th>
                 <th >Amount</th>
@@ -181,6 +183,7 @@
      }
      %>
         </table>
+        </div>
 	      </center>  
 	       <div class="footer-buttons">
 		      <a href="Home.jsp" class="home-btn">🏠 Home</a>
