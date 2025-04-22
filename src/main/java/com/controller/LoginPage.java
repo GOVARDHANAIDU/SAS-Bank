@@ -26,7 +26,7 @@ public class LoginPage extends HttpServlet {
 	
 		
 	@Override
-	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
 		LoginImp login = new LoginImp();
 		AllBankUserDetailsDAO allBankUserDetailsDAO = new AllBankUserDetailsImp(); 

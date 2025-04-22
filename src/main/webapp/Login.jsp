@@ -24,6 +24,7 @@
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
             width: 380px;
             text-align: center;
+            float : left;
         }
         h2 {
             margin-bottom: 20px;
@@ -42,6 +43,7 @@
             border-radius: 5px;
             font-size: 16px;
             outline: none;
+            
         }
         .input-group input:focus {
             border-color: #5e3370;
@@ -94,27 +96,63 @@
         .links a:hover {
             text-decoration: underline;
         }
+        
+        .spinner {
+      border: 5px solid #f3f3f3;
+      border-top: 5px solid teal;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      animation: spin 1s linear infinite;
+      margin-top:-19%;
+      margin-left:44%;
+      float: left;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    #loading {
+      display: none;
+      text-align: center;
+    }
+        
     </style>
 </head>
 <body>
     <div class="login-container">
         <h2>SAS BANK</h2>
-        <form action = "loginpage" method="Get">
+        <form id="balanceForm" action = "loginpage" method="Post">
             <div class="input-group">
                 <input type="email" required name = "emailid">
                 <label>Email ID</label>
             </div>
+            <div id="loading" style="display: none;">
+             <div class="spinner">
+             </div>
+          </div>
             <div class="input-group">
                 <input type="password" required name="password" maxlength="4">
                 <label>Password</label>
             </div>
-            <button type="submit" class="btn">Login</button>
+            <button type="button" class="btn" onclick="submitForm()">Login</button>
         </form>
         <div class="links">
             <a href="ForgotPassword.jsp">Forgot Password?</a> | <a href="CreateAccount.jsp">Create Account</a>
         </div>
     </div>
     
-    
+
+    <script>
+    function submitForm() {
+        // Show loading spinner
+        document.getElementById("loading").style.display = "block";
+
+        // Submit the form
+        document.getElementById("balanceForm").submit();
+      }
+</script>
 </body>
 </html>
