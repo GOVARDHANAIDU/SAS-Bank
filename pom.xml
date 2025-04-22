@@ -7,6 +7,10 @@
   <version>0.0.1-SNAPSHOT</version>
   <name>SAS_Bank Maven Webapp</name>
   <url>http://maven.apache.org</url>
+  <welcome-file-list>
+    <welcome-file>Login.jsp</welcome-file> <!-- or index.jsp -->
+</welcome-file-list>
+
   <dependencies>
     <dependency>
       <groupId>junit</groupId>
