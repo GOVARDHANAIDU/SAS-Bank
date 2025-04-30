@@ -27,7 +27,7 @@ public class TransactionHistoryImp implements TransactionHistory {
 		try {		
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			Connection connection =
-					DriverManager.getConnection("jdbc:mysql://sql12.freesqldatabase.com:3306/sql12773883","sql12773883","r71iFqJHWT");
+					DriverManager.getConnection("jdbc:mysql://localhost:3306/sas_bank","root","W7301@jqir#");
 			PreparedStatement preparedStatement = connection.prepareStatement(insertDetails);
 			preparedStatement.setDouble(1,accountStatement.getTransactionAmount());
 			preparedStatement.setDouble(2, accountStatement.getAccountBalance());
@@ -61,7 +61,7 @@ public class TransactionHistoryImp implements TransactionHistory {
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			Connection connection =
-					DriverManager.getConnection("jdbc:mysql://sql12.freesqldatabase.com:3306/sql12773883","sql12773883","r71iFqJHWT");
+					DriverManager.getConnection("jdbc:mysql://localhost:3306/sas_bank","root","W7301@jqir#");
 			PreparedStatement preparedStatement = connection.prepareStatement(selectAll);
 			preparedStatement.setInt(1, userId);
 			ResultSet result = preparedStatement.executeQuery();

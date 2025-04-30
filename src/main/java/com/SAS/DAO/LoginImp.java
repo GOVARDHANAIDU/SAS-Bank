@@ -25,7 +25,7 @@ public class LoginImp implements Login {
 		
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			Connection connection = DriverManager.getConnection("jdbc:mysql://sql12.freesqldatabase.com:3306/sql12773883","sql12773883","r71iFqJHWT");
+			Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/sas_bank","root","W7301@jqir#");
 			PreparedStatement preparedStatement = connection.prepareStatement(select_all);
 			preparedStatement.setString(1,emailid);
 			preparedStatement.setString(2, password);

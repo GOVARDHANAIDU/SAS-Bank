@@ -22,7 +22,7 @@ public class AllBankUserDetailsImp implements AllBankUserDetailsDAO{
 		try {
 			
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			Connection connection = DriverManager.getConnection("jdbc:mysql://sql12.freesqldatabase.com:3306/sql12773883","sql12773883","r71iFqJHWT");
+			Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/SAS_Bank","root","W7301@jqir#");
 			PreparedStatement preparedStatement = connection.prepareStatement(selectAll);
 			ResultSet resultSet = preparedStatement.executeQuery();
 			if(resultSet.isBeforeFirst()) {	

@@ -30,7 +30,7 @@ public class CheckBalanceFetch extends HttpServlet {
     		try {   			
     	            // Database Connection
     	            Class.forName("com.mysql.cj.jdbc.Driver");  
-    	            Connection con = DriverManager.getConnection("jdbc:mysql://sql12.freesqldatabase.com:3306/sql12773883","sql12773883","r71iFqJHWT");
+    	            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/sas_bank","root","W7301@jqir#");
     	            
     	            // Query to check PIN
     	            PreparedStatement ps = con.prepareStatement("SELECT Password FROM user_details WHERE Email_ID = ?");
