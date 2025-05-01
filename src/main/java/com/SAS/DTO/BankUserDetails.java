@@ -1,5 +1,7 @@
 package com.SAS.DTO;
 
+import java.time.LocalDate;
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -25,4 +27,5 @@ public class BankUserDetails {
    private  int pincode;
    private String password;
    private String Upiid;
+   private LocalDate dob;
 }

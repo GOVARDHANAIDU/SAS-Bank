@@ -1,6 +1,7 @@
 package com.SAS.DAO;
 
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -8,7 +9,6 @@ import java.sql.SQLException;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 import com.SAS.DTO.AccountStatement;
@@ -17,8 +17,8 @@ import com.SAS.Service.AccountBalanceValidation;
 
 public class UserRegistrationImp implements UserRegistrationDAO {
 
-	private static final String insertDetails = "insert into user_details(User_Name, Email_ID, Phone_Number, Aadhar_Number, PAN_Number, Address, Pincode,  Status,Password,Account_Number,IFSC_Code,Account_Balance,UPI_ID) "
-			+ "values(?,?,?,?,?,?,?,?,?,?,?,?,?)";
+	private static final String insertDetails = "insert into user_details(User_Name, Email_ID, Phone_Number, Aadhar_Number, PAN_Number, Address, Pincode,  Status,Password,Account_Number,IFSC_Code,Account_Balance,UPI_ID,Date_Of_Birth) "
+			+ "values(?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 	private static final String updateAmount = "update user_details set Account_Balance = ? where UPI_ID = ? ";
 	private static final String creditAmount = "update user_details set Account_Balance = ? where UPI_ID = ? ";
 	private static final String getAccountBalance = "select Account_Balance from user_details where UPI_ID = ? ";
@@ -57,8 +57,8 @@ public class UserRegistrationImp implements UserRegistrationDAO {
 				preparedStatement.setString(11, bankUserDetails.getIFSCCode());
 				preparedStatement.setDouble(12, 2000);
 				preparedStatement.setString(13,bankUserDetails.getUpiid());
+				preparedStatement.setDate(14,Date.valueOf(bankUserDetails.getDob()));
 				int result = preparedStatement.executeUpdate();
-				
 				if(result != 0)
 				{
 				  return true;

@@ -123,10 +123,6 @@
             justify-content: center;
             gap: 20px;
            }
-        .navbar{
-        width: 100%;
-        height: 50px;
-        }
         .hero{
         text-shadow: lime;
         }

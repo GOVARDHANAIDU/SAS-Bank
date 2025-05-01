@@ -2,6 +2,7 @@ package com.controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -43,6 +44,8 @@ public class UserRegistration  extends HttpServlet{
 		String ifscCode = req.getParameter("ifsccode");
 		String upiid = req.getParameter("upiId");
 		PrintWriter writer = resp.getWriter();
+		String temp_date = req.getParameter("dob");
+		LocalDate DOB = LocalDate.parse(temp_date);
 		if(password.equals(confrim_password)) {
 			bankUserDetails.setUserName(name);
 			bankUserDetails.setEmailid(emailid);
@@ -55,6 +58,7 @@ public class UserRegistration  extends HttpServlet{
 			bankUserDetails.setAccountNumber(accountNumber);
 			bankUserDetails.setIFSCCode(ifscCode);
 			bankUserDetails.setUpiid(upiid);
+			bankUserDetails.setDob(DOB);
 			if(userRegistrationDAO.insertDetails(bankUserDetails))
 			{
 				RequestDispatcher dispatcher = req.getRequestDispatcher("PaymentSuccess.jsp");
