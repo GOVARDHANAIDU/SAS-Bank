@@ -40,7 +40,8 @@ protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws Se
     	String sendedOtp = (String) session.getAttribute("sendedOtp");
     	PrintWriter writer = resp.getWriter();
     	
-        
+        System.out.println(otp);
+        System.out.println(sendedOtp);
     	if(sendedOtp.equals(otp)) {
     		RequestDispatcher requestDispatcher = req.getRequestDispatcher("NewPassword.jsp");
             requestDispatcher.forward(req, resp);           

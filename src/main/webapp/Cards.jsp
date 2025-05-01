@@ -78,7 +78,7 @@
         <div class="nav-links">
             <a href="Home.jsp">Home</a>
             <div class="dropdown">
-                <a href="?">Services</a>
+                <a href="PersonalBanking.jsp">Services</a>
                 <div class="dropdown-content">
                     <a href="PersonalBanking.jsp">Personal Banking</a>
                     <a href="#">Corporate Banking</a>
@@ -120,9 +120,9 @@
   <div class="card-container">
     <h2>Manage Your Cards</h2>
     <div class="button-grid">
-      <a href="QR.jsp" class="card-link"><div class="card-btn">Credit Card</div></a>
-      <a href="QR.jsp" class="card-link"><div class="card-btn">Debit Card</div></a>
-      <a href="QR.jsp" class="card-link"><div class="card-btn">Apply for Credit Card</div></a>
+      <a href="Credit.jsp" class="card-link"><div class="card-btn">Credit Card</div></a>
+      <a href="DebitCard.jsp" class="card-link"><div class="card-btn">Debit Card</div></a>
+      <a href="ApplyForCreditCard.jsp" class="card-link"><div class="card-btn">Apply for Credit Card</div></a>
       <a href="QR.jsp" class="card-link"><div class="card-btn">Apply for Debit Card</div></a>
       <a href="QR.jsp" class="card-link"><div class="card-btn">Apply for Virtual Card</div></a>
     </div>

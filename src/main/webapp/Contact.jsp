@@ -70,12 +70,13 @@
     width: 400px;
     height: 50px;
     border-radius: 5px;
-    background-color: #8e44ad;
+    background-color: red;
     color: white;
     padding: 10px;
     margin-bottom: 10px;
     position: relative;
     cursor: pointer;
+    
 	}
 	
 	.userNameText {
@@ -91,7 +92,18 @@
 	    padding-right: 10px;
 	    padding-top: 6px;  
 	}
-	   
+	
+	.scroll-wrapper {
+    height: 300px; /* adjust as needed */
+    overflow-y: auto;
+    width: 32%;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    padding-right: 10px;
+   }
+	
 	.userPhone :hover {
 	text-decoration: underline;
 	background-color: #D1E6DD;
@@ -175,7 +187,7 @@
 			<% } %>
 <br><br>
 
-   <<div id="userList">
+   <div id="userList"  class="scroll-wrapper">
 	<%
 	    AllBankUserDetailsImp allBankUserDetailsImp = new AllBankUserDetailsImp();
 	    List<BankUserDetails> list = allBankUserDetailsImp.SelectAllBankUserDetails();

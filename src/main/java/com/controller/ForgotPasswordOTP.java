@@ -27,11 +27,9 @@ public class ForgotPasswordOTP extends HttpServlet {
          
   		HttpSession httpSession = req.getSession();
   	    httpSession.setAttribute("email", email);
-  	    
-  	    
+ 	    
           if (email != null) {
-          	if(forgotPasswordImp.checkingEmailID(email) == true) {
-          		
+          	if(forgotPasswordImp.checkingEmailID(email) == true) {        		
           		String sendedOtp = testEmailOtp.otpVerification(email);
           	    httpSession.setAttribute("sendedOtp",sendedOtp);
           	  list.add(email);
@@ -40,18 +38,12 @@ public class ForgotPasswordOTP extends HttpServlet {
               
           } else {
         	  RequestDispatcher requestDispatcher = req.getRequestDispatcher("ForgotPassword.jsp");
-              requestDispatcher.forward(req, resp);
-      	 
+              requestDispatcher.forward(req, resp); 	 
          }
-      
-	}
-	  
-	 }
-	  
-	  
+	  }	  
+	 }	  
 	  public static List<String> setEmail() {
-		return list;
-		  
+		return list;		  
 	  }
 }
 

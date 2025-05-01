@@ -1,4 +1,3 @@
-
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@page import="com.SAS.DAO.LoginImp"%>
 <!DOCTYPE html>
@@ -142,9 +141,7 @@
         <div class="links">
             <a href="ForgotPassword.jsp">Forgot Password?</a> | <a href="CreateAccount.jsp">Create Account</a>
         </div>
-    </div>
-    
-
+    </div>   
     <script>
     function submitForm() {
         // Show loading spinner

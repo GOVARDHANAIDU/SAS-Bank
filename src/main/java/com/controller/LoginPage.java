@@ -23,8 +23,9 @@ public class LoginPage extends HttpServlet {
 	private static String upi = "";
 	private static double accamount;
 	private static int userId;
-	
-		
+	private static String emailid;
+	private static long phoneNumber;
+			
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
@@ -41,9 +42,23 @@ public class LoginPage extends HttpServlet {
 	    	HttpSession session = req.getSession();
 	    	session.setAttribute("email", emailid);
 	    	session.setAttribute("userName", name );
+	    	String fullName = name;
+	    	String firstPart = "";
+	    	int lastSpaceIndex = fullName.lastIndexOf(" ");
+	    	if (lastSpaceIndex != -1) {
+	    	    firstPart = fullName.substring(0, lastSpaceIndex);
+	    	    String lastPart = fullName.substring(lastSpaceIndex + 1);
+	    	    //System.out.println();
+    	        session.setAttribute("firstName", firstPart);
+    	        session.setAttribute("lastName", lastPart);   	        
+	    	} else {
+	    		session.setAttribute("firstName", firstPart);
+	    		session.setAttribute("lastName", ""); 
+	    	}
 	    	session.setAttribute("upiid", upi);
 	    	session.setAttribute("amount", accamount);
 	    	session.setAttribute("userId", userId);
+	    	session.setAttribute("phoneNumber", phoneNumber);
 	        RequestDispatcher requestDispatcher = req.getRequestDispatcher("Home.jsp");
 	        requestDispatcher.include(req, resp);
 	     }
@@ -55,11 +70,12 @@ public class LoginPage extends HttpServlet {
 			  writer.println("</script>"); 
 	     }
 	}
-	public static void userName(String userName, String upiid, double amount, int id) {
+	public static void userName(String userName, String upiid, double amount, int id, long phone) {
 			name = userName;
 			upi = upiid;
 			accamount = amount;
 			userId = id;
+			phoneNumber = phone;
 	}
 	
 }

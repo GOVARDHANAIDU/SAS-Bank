@@ -126,11 +126,11 @@
         .hero{
         text-shadow: lime;
         }
-        
+       
     </style>
 </head>
 <body>
-    <div class="navbar">
+    <div class="navbar" >
        <h2 class="BankingHeading" style="color: white">SAS Bank</h2>
         <div class="nav-links">
             <a href="Home.jsp">Home</a>

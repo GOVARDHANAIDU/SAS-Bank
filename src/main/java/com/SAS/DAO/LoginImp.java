@@ -39,10 +39,10 @@ public class LoginImp implements Login {
 	     	    	String name = resultSet.getString("User_Name");	     	    	
 	     	    	String upiid = resultSet.getString("UPI_ID");
 	     	    	String temp_amount = resultSet.getString("Account_Balance");
+	     	    	long phone = resultSet.getLong("Phone_Number");
 	     	    	int id = resultSet.getInt("id");
 	     	    	double amount = Double.parseDouble(temp_amount);
-	     			loginPage.userName(name,upiid,amount,id);
-	     			System.out.println(name);
+	     			loginPage.userName(name,upiid,amount,id,phone);
 			        return true;
 			     }
 			     else {			    	 
