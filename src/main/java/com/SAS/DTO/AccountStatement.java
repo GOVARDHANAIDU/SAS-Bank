@@ -25,4 +25,5 @@ public class AccountStatement {
   private String userName;
   private String recieverUserName;
   private String modeOfTransaction;
+
 }

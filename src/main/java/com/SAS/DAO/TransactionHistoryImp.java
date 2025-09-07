@@ -56,6 +56,8 @@ public class TransactionHistoryImp implements TransactionHistory {
 		}
 	}
 	List<AccountStatement> list = new ArrayList<AccountStatement>();
+	
+	
 	@Override
 	public List<AccountStatement> selectTotalHistory(int userId) {
 		try {
